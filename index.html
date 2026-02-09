@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Velmoryx — Custom Hoodie</title>
+
+  <style>
+    :root{
+      --bg0:#07070b;
+      --bg1:#0b0c12;
+      --text:#ffffffeb;
+      --muted:#ffffff9e;
+      --border:#ffffff24;
+      --card:#ffffff0a;
+      --glow-red:#ff2d5520;
+      --glow-purple:#7c3aed20;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,"Noto Sans Arabic";
+      background:
+        radial-gradient(800px 400px at 20% 10%, var(--glow-red), transparent 60%),
+        radial-gradient(800px 400px at 80% 20%, var(--glow-purple), transparent 60%),
+        linear-gradient(180deg,var(--bg0),var(--bg1));
+      color:var(--text);
+    }
+
+    .container{max-width:1200px;margin:auto;padding:20px}
+
+    /* Header */
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:20px;
+    }
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{
+      width:38px;height:38px;border-radius:14px;
+      object-fit:cover;
+      border:1px solid var(--border);
+      box-shadow:0 0 25px var(--glow-red);
+    }
+    .brand b{font-size:16px}
+    .brand span{font-size:12px;color:var(--muted)}
+
+    select, input, textarea, button{
+      font-family:inherit;
+    }
+
+    /* Layout */
+    .grid{
+      display:grid;
+      grid-template-columns:1.3fr .7fr;
+      gap:18px;
+    }
+
+    /* Hero */
+    .hero{
+      position:relative;
+      border-radius:28px;
+      padding:26px;
+      border:1px solid var(--border);
+      background:var(--card);
+      overflow:hidden;
+    }
+
+    .hero h1{
+      font-size:40px;
+      margin:0 0 10px;
+    }
+    .hero p{
+      color:var(--muted);
+      max-width:500px;
+      margin-bottom:20px;
+    }
+
+    .hero img{
+      width:100%;
+      max-height:420px;
+      object-fit:cover;
+      border-radius:22px;
+      margin-top:20px;
+    }
+
+    .price{
+      position:absolute;
+      bottom:26px;
+      left:26px;
+      padding:10px 14px;
+      border-radius:14px;
+      background:#ffffff1a;
+      border:1px solid var(--border);
+      font-weight:700;
+    }
+
+    /* Panel */
+    .panel{
+      border-radius:28px;
+      padding:20px;
+      border:1px solid var(--border);
+      background:var(--card);
+    }
+
+    .panel h2{
+      margin:0 0 6px;
+      font-size:18px;
+    }
+    .panel p{
+      margin:0 0 16px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    form{display:flex;flex-direction:column;gap:10px}
+
+    .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+    }
+
+    label{
+      font-size:12px;
+      color:var(--muted);
+      margin-bottom:4px;
+      display:block;
+    }
+
+    input, select{
+      padding:12px;
+      border-radius:14px;
+      border:1px solid var(--border);
+      background:#00000040;
+      color:white;
+    }
+
+    input:focus, select:focus{
+      outline:none;
+      border-color:#ff2d55;
+      box-shadow:0 0 0 3px var(--glow-red);
+    }
+
+    .summary{
+      display:flex;
+      gap:10px;
+      margin-top:8px;
+    }
+    .summary div{
+      flex:1;
+      padding:12px;
+      border-radius:16px;
+      background:#ffffff10;
+      border:1px solid var(--border);
+      font-size:13px;
+      display:flex;
+      justify-content:space-between;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      margin-top:10px;
+    }
+
+    .btn{
+      flex:1;
+      padding:14px;
+      border-radius:16px;
+      border:1px solid var(--border);
+      background:#ffffff12;
+      color:white;
+      cursor:pointer;
+      font-weight:600;
+    }
+
+    .btn.primary{
+      background:#ffffff1c;
+      box-shadow:0 0 30px var(--glow-red);
+    }
+
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr}
+      .hero h1{font-size:32px}
+    }
+  </style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="topbar">
+    <div class="brand">
+      <img src="./logo.png" class="logo" alt="logo">
+      <div>
+        <b>Velmoryx</b><br>
+        <span>Custom Hoodie Studio</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>هودي مخصص… تصميمك، ستايلك</h1>
+      <p>
+        اختر اللون، المقاس، ومكان الديزاين.
+        أرسل طلبك الآن وسيتم التواصل معك عبر واتساب.
+      </p>
+
+      <img src="ChatGPT Image 9 févr. 2026, 01_59_09.png" alt="hoodie">
+
+      <div class="price">💰 سعر الهودي: 4500 دج</div>
+    </section>
+
+    <!-- Form -->
+    <aside class="panel">
+      <h2>معلومات الطلب</h2>
+      <p>املأ البيانات ثم اضغط "اطلب الآن"</p>
+
+      <form id="orderForm">
+
+        <div class="row">
+          <div>
+            <label>الاسم</label>
+            <input name="name" required>
+          </div>
+          <div>
+            <label>رقم الهاتف</label>
+            <input name="phone" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>المقاس</label>
+            <select name="size" required>
+              <option value="">اختر</option>
+              <option>S</option><option>M</option><option>L</option>
+              <option>XL</option><option>XXL</option><option>3XL</option>
+            </select>
+          </div>
+          <div>
+            <label>الكمية</label>
+            <input type="number" name="qty" value="1" min="1" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div>
+            <label>اللون</label>
+            <select name="color" required>
+              <option value="">اختر</option>
+              <option>أبيض</option>
+              <option>أسود</option>
+            </select>
+          </div>
+          <div>
+            <label>مكان الديزاين</label>
+            <select name="placement" required>
+              <option value="">اختر</option>
+              <option>أمام</option>
+              <option>خلف</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label>الولاية</label>
+          <select id="wilaya" name="wilaya" required></select>
+        </div>
+
+        <div class="summary">
+          <div><span>التوصيل</span><b id="ship">—</b></div>
+          <div><span>الإجمالي</span><b id="total">—</b></div>
+        </div>
+
+        <div class="actions">
+          <button type="button" class="btn primary" id="orderBtn">اطلب الآن</button>
+        </div>
+
+      </form>
+    </aside>
+
+  </div>
+</div>
+
+<script>
+  const PRICE = 4500;
+  const WA = "213557036239";
+
+  const shipping = {
+    "Alger":0,"Blida":100,"Boumerdès":100,"Tipaza":100,
+    "Chlef":300,"Bouira":200,"Médéa":200,"Tizi Ouzou":200,
+    "Sétif":350,"Oran":350,"Constantine":350,"Mostaganem":350,
+    "Mascara":350,"Relizane":350,"Tiaret":350,
+    "Batna":400,"Annaba":400,"Skikda":400,"Jijel":400,
+    "Tébessa":400,"Saïda":400,"Sidi Bel Abbès":400,
+    "Guelma":450,"Biskra":450,"Souk Ahras":450,
+    "Laghouat":500,"Djelfa":500,"Ouled Djellal":500,
+    "Ouargla":600,"Ghardaïa":600,"Touggourt":600,
+    "El Oued":600,"El Meniaa":600,
+    "Béchar":700,"El Bayadh":700,"Naâma":700,"Beni Abbès":700,
+    "Timimoun":900,
+    "Adrar":1000,"Tindouf":1100,
+    "Tamanrasset":1300,"In Salah":1400,
+    "Illizi":1500,"Djanet":1700
+  };
+
+  const wilaya = document.getElementById("wilaya");
+  Object.keys(shipping).forEach(w=>{
+    const o=document.createElement("option");
+    o.value=w;o.textContent=`${w} — ${shipping[w]} دج`;
+    wilaya.appendChild(o);
+  });
+
+  const qty = document.querySelector("[name=qty]");
+  const shipEl=document.getElementById("ship");
+  const totalEl=document.getElementById("total");
+
+  function calc(){
+    const w=wilaya.value;
+    if(!w)return;
+    const s=shipping[w];
+    const q=+qty.value;
+    shipEl.textContent=s+" دج";
+    totalEl.textContent=(PRICE*q+s)+" دج";
+  }
+
+  wilaya.onchange=calc;
+  qty.oninput=calc;
+
+  document.getElementById("orderBtn").onclick=()=>{
+    const f=new FormData(document.getElementById("orderForm"));
+    if(!document.getElementById("orderForm").checkValidity()){
+      document.getElementById("orderForm").reportValidity();return;
+    }
+    let msg=`🧥 طلب هودي مخصص\n`;
+msg+=`——————————\n`;
+for(let [k,v] of f) msg+=`${k}: ${v}\n`;
+msg+=`——————————\n`;
+msg+=`💰 سعر الهودي: ${PRICE} دج\n`;
+msg+=`📦 التوصيل: ${shipEl.textContent}\n`;
+msg+=`🧾 الإجمالي: ${totalEl.textContent}\n`;
+msg+=`——————————\n`;
+msg+=`⚠️ يرجى إرسال صورة الديزاين (اللوغو / الرسم) هنا في واتساب بعد إرسال الطلب.\n`;
+msg+=`📐 يفضل صورة واضحة بجودة جيدة.\n`;
+    window.open(`https://wa.me/${WA}?text=${encodeURIComponent(msg)}`,"_blank");
+  };
+</script>
+</body>
+</html>
